@@ -1,0 +1,75 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Service","metadata":{"annotations":{},"name":"grafana","namespace":"default"},"spec":{"ports":[{"port":8081,"protocol":"TCP","targetPort":3000}],"selector":{"app":"grafana"},"type":"LoadBalancer"}}
+  creationTimestamp: "2024-02-26T23:08:58Z"
+  finalizers:
+  - service.kubernetes.io/load-balancer-cleanup
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:kubectl.kubernetes.io/last-applied-configuration: {}
+      f:spec:
+        f:allocateLoadBalancerNodePorts: {}
+        f:externalTrafficPolicy: {}
+        f:internalTrafficPolicy: {}
+        f:ports:
+          .: {}
+          k:{"port":8081,"protocol":"TCP"}:
+            .: {}
+            f:port: {}
+            f:protocol: {}
+            f:targetPort: {}
+        f:selector: {}
+        f:sessionAffinity: {}
+        f:type: {}
+    manager: kubectl-client-side-apply
+    operation: Update
+    time: "2024-02-26T23:09:27Z"
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:finalizers:
+          .: {}
+          v:"service.kubernetes.io/load-balancer-cleanup": {}
+      f:status:
+        f:loadBalancer:
+          f:ingress: {}
+    manager: k3s
+    operation: Update
+    subresource: status
+    time: "2024-02-26T23:09:30Z"
+  name: grafana
+  namespace: default
+  resourceVersion: "2214"
+  uid: 71e20f31-9d94-4e93-ba84-d365e67f7d17
+spec:
+  allocateLoadBalancerNodePorts: true
+  clusterIP: 10.43.186.31
+  clusterIPs:
+  - 10.43.186.31
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 31156
+    port: 8081
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    app: grafana
+  sessionAffinity: None
+  type: LoadBalancer
+status:
+  loadBalancer:
+    ingress:
+    - ip: 192.168.127.2
