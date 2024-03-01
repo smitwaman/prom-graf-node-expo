@@ -19,3 +19,6 @@ With the help or run query button with adjusting value for gc data monitoring.
 
 ![gb dta monitoring](https://github.com/smitwaman/prom-graf-node-expo/blob/main/images/5.png)
 
+Final actual output of grafana for node monitoring using graphs
+
+![gb dta monitoring](https://github.com/smitwaman/prom-graf-node-expo/blob/main/images/7..png)
